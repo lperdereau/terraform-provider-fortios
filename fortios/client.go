@@ -203,9 +203,7 @@ func createFortiOSClient(fClient *FortiClient, c *Config) error {
 		return fmt.Errorf("Error getting CA Bundle, CA Bundle should be set when insecure is false")
 	}
 
-	tr := &http.Transport{
-		TLSClientConfig: config,
-	}
+	tr := &http.Transport
 
 	client := &http.Client{
 		Transport: tr,
